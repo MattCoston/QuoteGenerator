@@ -1,25 +1,27 @@
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
-// document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
+ document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+var randomQuote = '';
+var finalQuote = '';
 // array of quote objects
+
 let quotes = [{
-	quote: "To be or not to be",
+	quote: "To be or not to be.  That is the question.",
 	source: "William Shakespeare",
-	citation: "Hamlet",
-	year: "Middle English"
+	citation: "Hamlet Act III Scene I",
+	year: "1599-1602"
 },
 {
-	quote: "2",
+	quote: "Atticus told me to delete the adjectives and I'd have the facts.",
 	source: "Harper Lee",
-	citation: "PAGE NUMBER",
-	year: "2"
+	citation: "To Kill a Mockingbird",
+	year: "July 11, 1960"
 },
 {
-	quote: "3",
-	source: "Harper Lee",
-	citation: "PAGE NUMBER",
-	year: "30"
+	quote: "One more dance along the razor's edge finished. Almost dead yesterday, maybe dead tomorrow, but alive, gloriously alive, today.",
+	source: "Robert Jordan",
+	citation: "Lord of Chaos",
+	year: "October 15, 1994"
 },
 {
 	quote: "4",
@@ -42,7 +44,6 @@ let quotes = [{
 
 // generates a number between 1 and 6
 quote = Math.floor(Math.random() * 6) + 1;
-console.log(quote);
 
 // selects random quote from previously generated quote variable
 
@@ -75,16 +76,28 @@ function getRandomQuote(quote){
 }
 
 
-function printQuote() {
-	finalQuote = getRandomQuote(randomQuote);
+function printQuote(randomQuote) {
+	for(var i = 0 in randomQuote) {
+	alert(Object.values(randomQuote));
+}
 	// document.write("<p class=\"quote\"> finalQuote.quote </p>
 	// <p class=\"source\"> [source here]
  //  	<span class=\"citation\"> [citation here] </span>
  //  	<span class=\"year\"> [year here] </span>
 	// </p>");
 }
-
+// console.log(finalQuote);
+printQuote(randomQuote);
 console.log(getRandomQuote(quote));
+
+alert(Object.values(randomQuote));
+
+
+
+// for(var i = 0 in randomQuote) {
+// 	document.write(randomQuote[i]);
+// }
+// document.write(Object.values(randomQuote));
 // rgbColor = Math.floor(Math.random() * 255) + 1
 // alert(rgbColor);
 // onLoad.setBackgroundColor(rgbColor)
